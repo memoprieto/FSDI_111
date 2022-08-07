@@ -9,7 +9,7 @@ def output_formatter(results):
             "first_name": result[1],
             "last_name": result[2],
             "hobbies": result[3],
-            "activate": result [4]
+            "active": result [4]
         }
         out.append(user)
     return out
