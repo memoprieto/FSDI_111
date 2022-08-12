@@ -19,6 +19,9 @@ def get_ping():
     }
     return response
 
+
+
+
 @app.get("/version")
 def get_version():
     response = {
@@ -27,6 +30,7 @@ def get_version():
         "server_time": datetime.now().strftime("%F %H:%M:%S")
     }
     return response
+
 
 @app.get("/users")
 def get_all_users():
@@ -37,18 +41,20 @@ def get_all_users():
     }
     return out
 
+
 @app.get("/users/<int:pk>")
 def get_user_by_id(pk):
-    user_obj=user.select_by_id(pk)
+    user_obj = user.select_by_id(pk)
     out={
-        "status":"ok",
-        "user":user_obj
+        "status": "ok",
+        "user": user_obj
     }
     return out
 
+
 @app.post("/users")
 def create_user():
-    raw_data=request.json
+    raw_data =request.json
     user.insert(raw_data)
     out={
         "status":"ok",
